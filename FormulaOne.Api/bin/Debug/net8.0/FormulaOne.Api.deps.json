@@ -428,12 +428,18 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.10"
         },
         "runtime": {
-          "FormulaOne.DataService.dll": {}
+          "FormulaOne.DataService.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "FormulaOne.Entities/1.0.0": {
         "runtime": {
-          "FormulaOne.Entities.dll": {}
+          "FormulaOne.Entities.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

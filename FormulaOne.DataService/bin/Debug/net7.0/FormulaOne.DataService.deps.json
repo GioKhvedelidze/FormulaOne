@@ -402,7 +402,10 @@
       },
       "FormulaOne.Entities/1.0.0": {
         "runtime": {
-          "FormulaOne.Entities.dll": {}
+          "FormulaOne.Entities.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

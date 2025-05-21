@@ -57,15 +57,9 @@ C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\For
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\FormulaOne.Api.csproj.CoreCompileInputs.cache
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\FormulaOne.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\FormulaOne.Api.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\staticwebassets\msbuild.FormulaOne.Api.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\staticwebassets\msbuild.build.FormulaOne.Api.props
-C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.FormulaOne.Api.props
-C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.FormulaOne.Api.props
-C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\scopedcss\bundle\FormulaOne.Api.styles.css
-C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\FormulaOne.Api.csproj.CopyComplete
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\FormulaOne.Api.dll
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\refint\FormulaOne.Api.dll
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\FormulaOne.Api.pdb
@@ -73,3 +67,8 @@ C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\For
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\ref\FormulaOne.Api.dll
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\bin\Debug\net8.0\FormulaOne.Api.staticwebassets.endpoints.json
+C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\FormulaOne.Api.sourcelink.json
+C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\FormulaO.57AAB250.Up2Date
