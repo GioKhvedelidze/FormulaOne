@@ -72,3 +72,5 @@ C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\For
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\obj\Debug\net8.0\FormulaO.57AAB250.Up2Date
+C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\bin\Debug\net8.0\MediatR.dll
+C:\Users\giorg\RiderProjects\WebApplication2\FormulaOne.Api\bin\Debug\net8.0\MediatR.Contracts.dll

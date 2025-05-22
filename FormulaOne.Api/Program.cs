@@ -2,7 +2,6 @@ using FormulaOne.DataService.Data;
 using FormulaOne.DataService.Repositories;
 using FormulaOne.DataService.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +16,9 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(
     ));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// Injectiong MediatR into DI
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
 var app = builder.Build();
 

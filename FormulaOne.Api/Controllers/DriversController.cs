@@ -1,84 +1,96 @@
 ﻿using AutoMapper;
+using FormulaOne.Api.Commands;
+using FormulaOne.Api.Queries;
 using FormulaOne.DataService.Repositories.Interfaces;
-using FormulaOne.Entities.DbSet;
 using FormulaOne.Entities.Dto.Requests;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FormulaOne.Api.Controllers;
 
 public class DriversController : BaseController
 {
-    public DriversController(IUnitOfWork unitOfWork, IMapper mapper) : base(unitOfWork, mapper)
+    private readonly IMediator _mediator;
+    
+    public DriversController(IUnitOfWork unitOfWork, IMapper mapper, IMediator mediator) 
+        : base(unitOfWork, mediator, mapper)
     {
+        _mediator = mediator;
     }
 
     [HttpGet]
     [Route("{driverId:guid}")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetDriverResponse))]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> GetDriver(Guid driverId)
     {
-        var driver = await _unitOfWork.Drivers.GetById(driverId);
+        var query = new GetDriverQuery(driverId);
+        
+        var result = await _mediator.Send(query);
 
-        if (driver == null)
-            return NotFound();
-
-        var result = _mapper.Map<GetDriverResponse>(driver);
-
+        return Ok(result);
+    }
+    
+    [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<GetDriverResponse>))]
+    public async Task<IActionResult> GetAllDrivers()
+    {
+        var query = new GetAllDriverQuery();
+        
+        var result = await _mediator.Send(query);
+        
         return Ok(result);
     }
 
     [HttpPost]
     [Route("")]
+    [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CreateDriverRequest))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public async Task<IActionResult> AddDriver([FromBody] CreateDriverRequest driver)
     {
         if (!ModelState.IsValid)
             return BadRequest();
 
-        var result = _mapper.Map<Driver>(driver);
+        var command = new CreateDriverInfoRequest(driver);
+        
+        var result = await _mediator.Send(command);
 
-        await _unitOfWork.Drivers.Add(result);
-        await _unitOfWork.CompleteAsync();
-
-        return CreatedAtAction(nameof(GetDriver), new { driverId = result.Id }, result);
+        return CreatedAtAction(nameof(GetDriver), new { driverId = result.DriverId }, result);
 
     }
     
     [HttpPut("")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
     public async Task<IActionResult> UpdateDriver([FromBody] UpdateDriverRequest driver)
     {
         if (!ModelState.IsValid)
             return BadRequest();
-
-        var result = _mapper.Map<Driver>(driver);
-
-        await _unitOfWork.Drivers.Update(result);
-        await _unitOfWork.CompleteAsync();
-
-        return NoContent();
-
-    }
-    
-    [HttpGet]
-    public async Task<IActionResult> GetAllDrivers()
-    {
-        var driver = await _unitOfWork.Drivers.All();
         
-
-        return Ok(_mapper.Map<IEnumerable<GetDriverResponse>>(driver));
+        var command = new UpdateDriverInfoRequest(driver);
+        
+        var result = await _mediator.Send(command);
+        
+        return result ? NoContent() : BadRequest();
     }
     
     [HttpDelete]
     [Route("{driverId:guid}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> DeleteDriver(Guid driverId)
     {
-        var driver = await _unitOfWork.Drivers.GetById(driverId);
+        var command = new DeleteDriverInfoRequest(driverId);
+        
+        var result = await _mediator.Send(command);
 
-        if (driver == null)
-            return NotFound();
-
-        await _unitOfWork.Drivers.Delete(driverId);
-        await _unitOfWork.CompleteAsync();
-
-        return NoContent();
+        return result ? NoContent() : BadRequest();
+        
     }
     
 }
